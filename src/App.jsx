@@ -3,16 +3,35 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Todo from "./todo";
+import Actor from "./Actor";
+import Singer from "./Singer";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const actors = ['Sakib','Bappa Raj','Jasim','Rubel'] ;
+  const singers = [
+    {id: 1, name:'Dr.Mahfuzar Rahman', age: 68},
+    {id: 2, name:'Eva Rahman', age: 38},
+    {id: 3, name:'Shuvo', age: 58},
+    {id: 4, name:'Pritom ', age: 28},
+  ]
   return (
     <>
       <h1>Vite + React</h1>
-      <Todo task="Learn React" isDone={true}></Todo>
+
+    {
+      singers.map(singer => <Singer singer={singer}></Singer>)
+    }
+
+
+      <Actor name ={"Sushil"}></Actor>
+      {
+        actors.map(actor =><Actor name={actor}></Actor>)
+      }
+      {/* <Todo task="Learn React" isDone={true}></Todo>
       <Todo task="Explore Core Concepts" isDone={false}></Todo>
-      <Todo task="Try JSX" isDone={true}></Todo>
+      <Todo task="Try JSX" isDone={true}></Todo> */}
       {/* <Device name = 'Laptop' price ='22k'></Device>
       <Device name = 'Mobile' price ='12k'></Device>
       <Device name = 'Watch' price='300'></Device>
